@@ -1,21 +1,5 @@
 export default class strategy {
 
-    static estado = "Pausa";
-
-    static Estado(a:string){
-        
-        let mss = "Comando Repetido";
-
-        if(this.estado == a){
-            return mss;
-        }
-        else{
-            this.estado = a;
-            return this.estado;
-        }
-    }
-
-    
     static var1: number[] = []; //Cliente, Tiempo Aux
 
     static empleado(a:number, b:number){ 
@@ -27,7 +11,12 @@ export default class strategy {
                 this.var1[1] = cliente[i];
             }
             else{
-                if(var1[1] == cliente)
+                if(this.var1[1] == cliente[i]){
+                    return this.var1;
+                }
+                else{
+                    return cliente[i];
+                }
             }
         }
     }
