@@ -5,9 +5,8 @@ export default class strategy {
     static vehiculos: string[] = ["Colectivo","Auto","Combi"];
 
     static traslado(a:number,b:number){  //Tiempo, Precio Disponible
-        let tiempF = this.Tiempo(b);
         let precioF = this.Precio(a);
-
+        let tiempF = this.Tiempo(b);
 
 
         if(tiempF != null && precioF != null){
@@ -26,17 +25,6 @@ export default class strategy {
         
     }
 
-    static Tiempo(b:number){
-        let aux = null
-
-        for(let i=0;i<3;i++){
-            if(b == this.precios[i]){
-                aux=i;
-            }
-        }
-        return aux;
-    }
-
     static Precio(a:number){
         let aux = null
 
@@ -49,5 +37,15 @@ export default class strategy {
 
     }
 
+    static Tiempo(b:number){
+        let aux = null
+
+        for(let i=0;i<3;i++){
+            if(b == this.precios[i]){
+                aux=i;
+            }
+        }
+        return aux;
+    }
 
 }
