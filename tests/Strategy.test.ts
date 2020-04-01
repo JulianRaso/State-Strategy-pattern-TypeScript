@@ -24,7 +24,7 @@ describe('Traslado', function() {
 
 describe('Traslado', function() {
     it('TiempAuto', function() {
-        let result = Strategy.traslado(70,10);
+        let result = Strategy.traslado(20,10);
         expect(result).equal("Auto");   
     }); 
 });

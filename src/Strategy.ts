@@ -27,27 +27,26 @@ export default class strategy {
     }
 
     static Tiempo(b:number){
-        
-        for(let i=0;i<4;i++){
-            if(b == this.tiempo[i]){
-                return i;
-            }
-            else{
-                return null
+        let aux = null
+
+        for(let i=0;i<3;i++){
+            if(b == this.precios[i]){
+                aux=i;
             }
         }
+        return aux;
     }
 
     static Precio(a:number){
-        
-        for(let i=0;i<4;i++){
+        let aux = null
+
+        for(let i=0;i<3;i++){
             if(a == this.precios[i]){
-                return i;
-            }
-            else{
-                return null
+                aux=i;
             }
         }
+        return aux;
+
     }
 
 
