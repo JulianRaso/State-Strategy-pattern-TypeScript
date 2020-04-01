@@ -1,22 +1,51 @@
 export default class strategy {
 
-    static var1: number[] = []; //Cliente, Tiempo Aux
+    static precios: number[] = [15,60,20];
+    static tiempo: number[] = [35,10,25];
+    static vehiculos: string[] = ["Colectivo","Auto","Combi"];
 
-    static empleado(a:number, b:number){ 
-        let cliente: number[] = []; //Cliente, Tiempo
-         
+    static traslado(a:number,b:number){  //Tiempo, Precio Disponible
+        let tiempF = this.Tiempo(b);
+        let precioF = this.Precio(a);
 
-        for(let i=0; i<cliente.length;i++){ //Las dos variables se tiene que guardar dentro del cliente
-            if(this.var1[1] == null){
-                this.var1[1] = cliente[i];
+
+
+        if(tiempF != null && precioF != null){
+            return this.vehiculos[precioF]
+        }
+        else if(tiempF != null && precioF == null){
+            return this.vehiculos[tiempF]
+        }
+        else if(tiempF == null && precioF != null){
+            return this.vehiculos[precioF]
+        }
+        else{
+            return "Error";
+        }
+        
+        
+    }
+
+    static Tiempo(b:number){
+        
+        for(let i=0;i<4;i++){
+            if(b == this.tiempo[i]){
+                return i;
             }
             else{
-                if(this.var1[1] == cliente[i]){
-                    return this.var1;
-                }
-                else{
-                    return cliente[i];
-                }
+                return null
+            }
+        }
+    }
+
+    static Precio(a:number){
+        
+        for(let i=0;i<4;i++){
+            if(a == this.precios[i]){
+                return i;
+            }
+            else{
+                return null
             }
         }
     }
